@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dhanwanthire S — Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+  <div class="container nav-inner">
+    <!-- <div class="logo">Dhanwanthire S</div> -->
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#vision">Visionary</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+  <section class="hero">
+  <canvas id="hero-particles"></canvas>
+  <div class="hero-content">
+    <h1 class="hero-name">Dhanwanthire S</h1>
+    <h2 class="hero-role">
+   <span class="role-highlight">Java Full Stack Developer</span>
+</h2>
+
+    <p class="hero-desc">
+      Passionate about building modern, scalable, and efficient web applications 
+      using Java, Spring Boot, React, and cloud technologies. 
+      Always eager to learn and innovate.
+    </p>
+    <div class="hero-buttons">
+      <a href="resume.pdf" class="btn-primary">Check Resume</a>
+      <a href="#projects" class="btn-secondary">View Projects</a>
+    </div>
+  </div>
+</section>
+
+
+
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="container">
+      <h3>About</h3>
+      <p>
+        I am a Java Full Stack Developer with hands-on experience building scalable backend APIs using Java and Spring Boot (RESTful services, authentication, microservices) and creating responsive frontends with React, React Router, and Redux/Context API.
+
+Proficient in database design and optimization with MySQL/PostgreSQL, including complex SQL queries, joins, and stored procedures. Experienced with version control (Git/GitHub), developer tools (VSCode, Postman, Maven/Gradle), and applying SOLID principles and Agile methodologies to deliver clean, maintainable code.
+
+I enjoy collaborating in cross-functional teams and contributing to all stages of the software development lifecycle.   </p>
+    </div>
+  </section>
+  <!-- SKILLS -->
+<section id="skills" class="section gray">
+  <div class="container">
+    <h3>Skills</h3>
+    <div class="skills-shapes">
+      <!-- Frontend Skills -->
+      <div class="skill-shape" data-skill="HTML">HTML</div>
+      <div class="skill-shape" data-skill="CSS">CSS</div>
+      <div class="skill-shape" data-skill="JavaScript">JavaScript</div>
+      <div class="skill-shape" data-skill="React">React</div>
+      <div class="skill-shape" data-skill="Redux">TypeScript</div>
+      <div class="skill-shape" data-skill="Bootstrap">Bootstrap</div>
+      <div class="skill-shape" data-skill="UI/UX">UI/UX</div>
+
+      <!-- Backend & Tools -->
+      <div class="skill-shape" data-skill="Java">Java</div>
+      <div class="skill-shape" data-skill="Spring Boot">Spring Boot</div>
+      <div class="skill-shape" data-skill="Python">Python</div>
+      <div class="skill-shape" data-skill="MySQL/Postgres">MySQL/Postgres</div>
+      <div class="skill-shape" data-skill="Git/GitHub/VSCode">Git/GitHub/VSCode</div>
+    </div>
+  </div>
+</section>
+
+<section id="skill-visualization" class="section gray" style="position: relative; overflow: hidden;">
+  <!-- Particle background -->
+  <div id="skills-particles" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0;"></div>
+
+  <div class="container" style="position: relative; z-index: 1;">
+    <h3>My Skills Overview</h3>
+    <div class="chart-wrap">
+      <canvas id="skillsChart"></canvas>
+    </div>
+  </div>
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  
+<script>
+tsParticles.load("skills-particles", {
+  fpsLimit: 60,
+  particles: {
+    number: { value: 30 },
+    color: { value: ["#6c5ce7","#00cec9","#ff7675","#74b9ff"] },
+    shape: { type: "circle" },
+    opacity: { value: 0.2 },
+    size: { value: 3 },
+    move: { enable: true, speed: 0.5, direction: "none", outModes: "bounce" }
+  },
+  interactivity: { events: { onhover: { enable: true, mode: "repulse" } } },
+  detectRetina: true
+});
+</script>
+
+
+  <!-- VISION -->
+<section id="vision" class="section">
+  <div class="container">
+    <h3>Visionary</h3>
+    <div id="vision-particles"></div> <!-- Optional AI particle background -->
+
+    <div class="vision-grid">
+      <div class="vision-card">
+        <h4>Personalisation</h4>
+        <p>I design and build solutions that align with user needs and business objectives. My approach emphasizes writing clean, maintainable code, developing intuitive and responsive interfaces, and implementing performance-optimized features that scale reliably. I prioritize user experience, accessibility, and efficiency across the full stack.</p>
+      </div>
+      <div class="vision-card">
+        <h4>Reason to hire me</h4>
+        <p>I bring end-to-end full-stack expertise, strong debugging skills, and knowledge of design patterns and system architecture. I deliver high-quality software consistently, collaborate with cross-functional teams, and drive productivity through well-structured, maintainable code and scalable solutions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+<script>
+const visionCards = document.querySelectorAll(".vision-card");
+
+const visionObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.style.opacity = 1;
+      entry.target.style.transform = "translateY(0)";
+      visionObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.3 });
+
+visionCards.forEach(card => visionObserver.observe(card));
+// Particle background for Vision section
+  tsParticles.load("vision-particles", {
+    fpsLimit: 60,
+    particles: {
+      number: { value: 25 },
+      color: { value: ["#6c5ce7","#00cec9","#74b9ff"] },
+      shape: { type: "circle" },
+      opacity: { value: 0.2 },
+      size: { value: 3 },
+      move: { enable: true, speed: 0.5, direction: "none", outMode: "bounce" }
+    },
+    interactivity: { events: { onhover: { enable: false } } },
+    detectRetina: true
+  });
+</script>
+
+
+  <section id="projects" class="section gray" style="position: relative;">
+  <div class="container">
+    <h3>Projects</h3>
+
+    <!-- Neuron particles for Projects section -->
+    <div id="projects-particles" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: 0;"></div>
+
+    <div class="projects-grid" style="position: relative; z-index: 1;">
+      <!-- Project 1 -->
+      <article class="project-card">
+        <div class="project-media" id="proj1-preview">
+          <img src="https://via.placeholder.com/420x220?text=Project+Screenshot" alt="Project 1 preview">
+        </div>
+        <div class="project-body">
+          <h4>Shop360 — AI Hyperlocal Marketplace</h4>
+          <p>Full-stack Java application enabling offline-friendly marketplaces for rural sellers.</p>
+          <div class="project-links">
+            <a href="https://github.com/dhanwanthiresathish2005-coder/AI-Market.git" target="_blank">GitHub</a>
+            <label class="upload-btn">Upload Screenshot
+              <input type="file" accept="image/*" class="proj-upload" data-target="proj1-preview">
+            </label>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card">
+        <div class="project-media" id="proj2-preview">
+          <img src="https://via.placeholder.com/420x220?text=Project+Screenshot" alt="Project 2 preview">
+        </div>
+        <div class="project-body">
+          <h4>Healthy Eating Assistant</h4>
+          <p>React Native app with BMI calculator, voice input & meal planning.</p>
+          <div class="project-links">
+            <a href="https://github.com/dhanwanthiresathish2005-coder/meal-backend" target="_blank">GitHub</a>
+            <label class="upload-btn">Upload Screenshot
+              <input type="file" accept="image/*" class="proj-upload" data-target="proj2-preview">
+            </label>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card">
+        <div class="project-media" id="proj3-preview">
+          <img src="https://via.placeholder.com/420x220?text=Project+Screenshot" alt="Project 3 preview">
+        </div>
+        <div class="project-body">
+          <h4>Portfolio Website</h4>
+          <p>Modern portfolio built with animations & responsive design.</p>
+          <div class="project-links">
+            <a href="#">Live Demo</a>
+            <label class="upload-btn">Upload Screenshot
+              <input type="file" accept="image/*" class="proj-upload" data-target="proj3-preview">
+            </label>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<script>
+const projectCards = document.querySelectorAll(".project-card");
+
+const projectObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("visible");
+      projectObserver.unobserve(entry.target); // animate once
+    }
+  });
+}, { threshold: 0.3 });
+
+projectCards.forEach(card => projectObserver.observe(card));
+
+// neuron particles only inside Projects section
+tsParticles.load("projects-particles", {
+  particles: {
+    number: { value: 60 },
+    size: { value: 4, random: true },
+    move: { enable: true, speed: 1.5, direction: "none", outModes: "bounce" },
+    color: { value: ["#6c5ce7", "#00cec9"] },
+    links: { enable: true, distance: 120, color: "#74b9ff", opacity: 0.4, width: 1 },
+    shape: { type: "circle" }
+  },
+  interactivity: {
+    events: {
+      onhover: { enable: true, mode: "grab" },
+      onclick: { enable: true, mode: "push" }
+    }
+  },
+  retina_detect: true
+});
+</script>
+
+
+  <section id="education" class="section">
+  <div class="container">
+    <h3>Education</h3>
+
+    <!-- Education Particles Background -->
+    <div id="edu-particles"></div>
+
+    <div class="edu-grid">
+      <div class="edu-card">
+        <h4>Bachelor of Computer Science and Engineering (B.E. CSE)</h4>
+        <p>Anand Institute of Higher Technology — 2022-2025</p>
+        <p>Relevant coursework: Data Structures & Algorithms, Databases (MySQL/PostgreSQL), Web Engineering (HTML, CSS, JavaScript, React), Object-Oriented Programming (Java), Software Engineering & System Design, Full-Stack Development Projects / Internship Work</p>
+      </div>
+      <div class="edu-card">
+        <h4>Certifications & Achievements</h4>
+        <p>MongoDB Skillathon 2025 – MongoDB University</p>
+        <p>MongoDB Course Series – MongoDB University</p>
+        <p>Fundamentals of Generative AI – SAWT.AI Learnathon Program</p>
+        <p>Merit Certificate – Secured 3rd rank in 1st Semester and 2nd rank in 2nd Semester, B.E. CSE</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+tsParticles.load("edu-particles", {
+  fpsLimit: 60,
+  particles: {
+    number: { value: 30 },
+    color: { value: ["#6c5ce7","#00cec9","#ff7675","#74b9ff"] },
+    shape: { type: "circle" },
+    opacity: { value: 0.2 },
+    size: { value: 3 },
+    move: { enable: true, speed: 0.5, direction: "none", outMode: "bounce" }
+  },
+  interactivity: { events: { onhover: { enable: true, mode: "repulse" } } },
+  detectRetina: true
+});
+</script>
+
+
+<!-- FOOTER -->
+<footer id="contact" class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="contact-info">
+        <h4 class="footer-heading">Contact</h4>
+        <p>Email: <a href="mailto:dhanwanthiresathish2005@gmail.com">dhanwanthiresathish2005@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/dhanwanthire-s-02b50336b" target="_blank">LinkedIn</a></p>
+        <p>GitHub: <a href="https://github.com/dhanwanthiresathish2005-coder" target="_blank">GitHub</a></p>
+      </div>
+      <div class="footer-note">
+        <p>© <span id="year"></span> Dhanwanthire. Built with care.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="script.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  // Skills JSON
+  const skillsData = {
+  HTML: 95,
+  CSS: 92,
+  JavaScript: 88,
+  React: 85,
+  TypeScript: 75,
+  Bootstrap: 87,
+  Java: 92,
+  "Spring Boot": 90,
+  Python: 70,
+  "MySQL/Postgres": 82,
+  "Git/GitHub/VSCode": 93,
+  "UI/UX": 70
+};
+
+
+  const ctx = document.getElementById("skillsChart").getContext("2d");
+
+  const data = {
+    labels: Object.keys(skillsData),
+    datasets: [{
+      label: "Skill Proficiency",
+      data: Object.values(skillsData),
+      backgroundColor: "rgba(108, 92, 231, 0.15)",   // soft fill
+      borderColor: "rgba(108, 92, 231, 0.8)",        // neon line
+      borderWidth: 2,
+      pointBackgroundColor: "#00cec9",               // points color
+      pointBorderColor: "#fff",
+      pointRadius: 6,
+      pointHoverRadius: 8,
+      fill: true,
+      tension: 0.4
+    }]
+  };
+
+  const config = {
+    type: "radar",
+    data: data,
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      scales: {
+        r: {
+          angleLines: { color: "rgba(255,255,255,0.1)" },
+          grid: { color: "rgba(255,255,255,0.03)" },
+          suggestedMin: 0,
+          suggestedMax: 100,
+          ticks: { stepSize: 20, color: "#74b9ff", backdropColor: "transparent" },
+          pointLabels: { color: "#fff", font: { size: 14, weight: 600 } }
+        }
+      },
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          backgroundColor: "rgba(0,0,0,0.8)",
+          titleColor: "#74b9ff",
+          bodyColor: "#fff",
+          cornerRadius: 6
+        }
+      },
+      animation: { duration: 1200, easing: "easeOutQuart" }
+    }
+  };
+
+  // Scroll-trigger animation
+  const chartSection = document.getElementById("skill-visualization");
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        new Chart(ctx, config); // draw chart when visible
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  observer.observe(chartSection);
+</script>
+<!-- Scroll animation for skills -->
+<script>
+  const skillElements = document.querySelectorAll(".skill-shape");
+
+  const skillObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = "translateY(0)";
+        entry.target.style.transition = "all 0.6s ease-out";
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  skillElements.forEach(skill => skillObserver.observe(skill));
+</script>
+
+
+</body>
+</html>
