@@ -493,3 +493,20 @@ nav a:hover {
   .portrait{width:200px;height:200px}
   .desc{font-size:14px}
 }
+/* Container for your header/name */
+.header {
+  display: flex;
+  justify-content: center; /* center horizontally */
+  align-items: center;     /* center vertically */
+  padding: 1rem;
+  flex-wrap: nowrap;       /* prevent wrapping */
+}
+
+/* Your name */
+.name {
+  font-size: clamp(1.5rem, 5vw, 3rem); /* scales with screen size */
+  font-weight: bold;
+  white-space: nowrap;        /* keep in one line */
+  overflow: hidden;           /* hide excess text */
+  text-overflow: ellipsis;    /* show ... if it overflows */
+}
