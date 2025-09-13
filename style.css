@@ -510,3 +510,134 @@ nav a:hover {
   overflow: hidden;           /* hide excess text */
   text-overflow: ellipsis;    /* show ... if it overflows */
 }
+/* ===== Tablet / small screens ===== */
+@media (max-width: 768px) {
+  /* Navbar links stack */
+  .nav-inner {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+
+  nav a {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  /* Hero adjustments */
+  .hero-content {
+    padding: 10px;
+  }
+
+  .hero-name {
+    font-size: 2.5rem;
+  }
+
+  .hero-role {
+    font-size: 1.4rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Skills shapes wrap better */
+  .skills-shapes {
+    gap: 15px;
+  }
+
+  /* Projects grid */
+  .projects-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  /* Education grid */
+  .edu-grid {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
+/* ===== Mobile / very small screens ===== */
+@media (max-width: 480px) {
+  /* Navbar links stack fully */
+  .nav-inner {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  nav a {
+    font-size: 13px;
+    padding: 6px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hero */
+  .hero-name {
+    font-size: 2rem;
+    white-space: normal;
+  }
+
+  .hero-role {
+    font-size: 1.2rem;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Portrait / hero image */
+  .portrait {
+    width: 160px;
+    height: 160px;
+  }
+
+  /* Skills shapes */
+  .skill-shape {
+    width: 70px;
+    height: 70px;
+    font-size: 11px;
+  }
+
+  .chart-wrap {
+    max-width: 100%;
+  }
+
+  /* Projects grid single column */
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Vision grid single column */
+  .vision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Education cards full width */
+  .edu-grid {
+    flex-direction: column;
+  }
+
+  /* Footer stacking */
+  .footer-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  /* Footer text smaller */
+  .footer-note {
+    font-size: 0.8rem;
+  }
+}
